@@ -99,4 +99,4 @@ class View2(tk.Frame):
         Label(self, text="MENSAJES VALIDACIÓN").grid(row=10, column=0, columnspan=4)
 
         Button(self, text="INSERTAR", **estilo_boton).grid(row=10, column=5,columnspan=2, padx=(0,100))
-        Button(self, text="Back to View 1", image=self.back_img,bd=0, command=lambda: controller.show_frame("View1")).place(x=10, y=10)
+        Button(self, image=self.back_img,bd=0, command=lambda: controller.show_frame("View1")).place(x=10, y=10)
