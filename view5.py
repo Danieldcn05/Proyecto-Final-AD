@@ -53,7 +53,7 @@ class View5(tk.Frame):
         Label(self, text="FECHA INICIO", **estilo_label).grid(row=2, column=0, columnspan=1,padx=(100,25))
         Entry(self, **estilo_entry,state="disabled").grid(row=3, column=0, columnspan=1, sticky="ew",padx=(100,25), ipady=6)
         
-        Label(self, text="FECHA FIN", **estilo_label).grid(row=2, column=1, columnspan=1, padx=(25,25) )
+        Label(self, text="FECHA NACIMIENTO", **estilo_label).grid(row=2, column=1, columnspan=1, padx=(25,25) )
         Entry(self, **estilo_entry,state="disabled").grid(row=3, column=1, columnspan=1, sticky="ew",padx=(25,25), ipady=6)
         
         Label(self, text="DIRECCIÓN", **estilo_label).grid(row=2, column=2, columnspan=4, padx=(25, 100))
