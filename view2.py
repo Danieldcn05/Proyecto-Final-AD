@@ -26,7 +26,9 @@ class View2(tk.Frame):
         }
 
         estilo_entry = {
-            "font": ("Helvetica", 12)
+            "font": ("Helvetica", 12),
+            "bd": 1,
+            "relief": "solid"
            
         }
         
@@ -96,7 +98,8 @@ class View2(tk.Frame):
         Label(self, text="SS", anchor="w", **estilo_label).grid(row=9, column=4, sticky="ew", padx=(50,25))
         Entry(self, **estilo_entry).grid(row=9, column=5, sticky="ew", padx=(0,100), ipady=10)
 
-        Label(self, text="MENSAJES VALIDACIÓN").grid(row=10, column=0, columnspan=4)
+        Label(self, text="MENSAJES VALIDACIÓN", font=("Helvetica",18,"bold"), fg="red", bd=1, relief="solid").grid(row=10, column=0, columnspan=4, sticky="ew",padx=(100,0), ipady=10)
+        
 
         Button(self, text="INSERTAR", **estilo_boton).grid(row=10, column=5,columnspan=2, padx=(0,100))
         Button(self, image=self.back_img,bd=0, command=lambda: controller.show_frame("View1")).place(x=10, y=10)

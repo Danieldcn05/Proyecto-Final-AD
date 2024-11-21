@@ -48,4 +48,4 @@ class View1(tk.Frame):
         Button(self, text="Informes", **estilo_boton, command=lambda: controller.show_frame("View4")).grid(row=3, column=1)
 
         Button(self, text="Bajas", **estilo_boton, command=lambda: controller.show_frame("View3")).grid(row=2, column=2)
-        Button(self, text="Nóminas", **estilo_boton).grid(row=3, column=2)
+        Button(self, text="Nóminas", **estilo_boton, command=lambda: controller.show_frame("View5")).grid(row=3, column=2)

@@ -26,7 +26,9 @@ class View3(tk.Frame):
         }
 
         estilo_entry = {
-            "font": ("Helvetica", 12)
+            "font": ("Helvetica", 12),
+            "bd": 1,
+            "relief": "solid"
            
         }
 
