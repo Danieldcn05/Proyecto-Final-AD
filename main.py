@@ -5,8 +5,8 @@ from view2 import View2
 class MainApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Principal")
-        self.geometry("1200x700")
+        self.title("Nominator")
+        self.geometry("1500x800")
         self.resizable(False, False)
 
         self.container = tk.Frame(self)
