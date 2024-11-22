@@ -73,3 +73,28 @@ class DatabaseManager:
             print(f"Error al asignar fecha de baja: {e}")
         finally:
             conn.close()
+
+    def usuario_existe(self, user_id):
+        conn = sqlite3.connect(self.db_name)
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT 1 FROM empleados WHERE id = ?", (user_id,))
+        result = cursor.fetchone()
+        
+        conn.close()
+        
+        return result is not None 
+    
+    def tiene_fecha_baja(self, user_id):
+        conn = sqlite3.connect(self.db_name)
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT fec_baja FROM empleados WHERE id = ?", (user_id,))
+        result = cursor.fetchone()
+        
+        conn.close()
+        
+        if result is None:
+            return False  # El usuario no existe
+        return result[0] is not None  # True si tiene fecha de baja, False si es NULL
+    

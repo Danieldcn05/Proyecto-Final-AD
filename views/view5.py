@@ -105,7 +105,7 @@ class View5(tk.Frame):
         Label(self, text="MENSAJES VALIDACIÓN", font=("Helvetica",18,"bold"), fg="red", bd=1, relief="solid").grid(row=9, column=0, columnspan=4, sticky="ew",padx=(100,0), ipady=10)
 
         Label(self, text="A PERCIBIR", anchor="w", **estilo_label).grid(row=9, column=4, sticky="ew", padx=(50,25))
-        Entry(self, state="disabled", bd=1, relief="solid",font=("Helvetica",12),disabledbackground="#5ED3E8").grid(row=9, column=5, sticky="ew", padx=(0,100), ipady=10)
+        Entry(self, state="disabled", bd=1, relief="solid",font=("Helvetica",12),disabledbackground="#5ED3E8",).grid(row=9, column=5, sticky="ew", padx=(0,100), ipady=10)
 
         Button(self, text="INSERTAR", **estilo_boton).grid(row=10, column=4,columnspan=2, padx=(0,100))
         Button(self, text="CALCULAR", **estilo_boton).grid(row=10, column=2,columnspan=2, padx=(50,50))

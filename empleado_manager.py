@@ -136,3 +136,21 @@ class EmpleadoManager:
                 return True
             else:
                 return False
+            
+        def asignar_fec_baja(self, emp_id, fec_baja, msg_val):
+
+            try:
+                datetime.strptime(fec_baja, '%Y-%m-%d')
+            except ValueError:
+                msg_val.config(text="FORMATO DE FECHA INVÁLIDO (AAAA-MM-DD)", fg="red")
+                raise ValueError("Formato de fecha inválido")
+
+            if self.db_manager.usuario_existe(emp_id) and not self.db_manager.tiene_fecha_baja(emp_id):
+                self.db_manager.asignar_fec_baja(emp_id, fec_baja)
+                msg_val.config(text="EMPLEADO DADO DE BAJA EXITOSAMENTE", fg="green")
+                return True
+            else:
+                msg_val.config(text="EMPLEADO NO EXISTE", fg="red")
+                return False
+            
+            
