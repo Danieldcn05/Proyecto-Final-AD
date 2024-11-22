@@ -1,9 +1,9 @@
 import tkinter as tk
-from view1 import View1
-from view2 import View2
-from view3 import View3
-from view4 import View4
-from view5 import View5
+from views.view1 import View1
+from views.view2 import View2
+from views.view3 import View3
+from views.view4 import View4
+from views.view5 import View5
 
 class MainApp(tk.Tk):
     def __init__(self):
