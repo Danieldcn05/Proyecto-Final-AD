@@ -4,6 +4,8 @@ from views.view2 import View2
 from views.view3 import View3
 from views.view4 import View4
 from views.view5 import View5
+from bd.db_setup import DatabaseManager
+
 
 class MainApp(tk.Tk):
     def __init__(self):
@@ -12,6 +14,8 @@ class MainApp(tk.Tk):
         self.geometry("1500x800")
         self.resizable(False, False)
 
+        db_manager = DatabaseManager()
+        db_manager.create_database()
 
         self.container = tk.Frame(self)
         self.container.pack(fill="both", expand=True)
@@ -33,4 +37,5 @@ class MainApp(tk.Tk):
 
 if __name__ == "__main__":
     app = MainApp()
+
     app.mainloop()

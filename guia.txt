@@ -1,2 +1,17 @@
-.\venv\Scripts\activate
-pip install -r requirements.txt
+
+"Juan Perez", 
+"2021-01-01",
+ "1990-01-01",
+  "Calle Falsa 123",
+   "12345678Z",
+    "ES24 0528 6704 73 7978721006",
+     "43/08308793/34",
+      "M", 
+      "Informática", 
+      "Programador",
+       "123456789"
+       ,"prom@gmail.com",
+        1000,
+         2,
+          15,
+           6
