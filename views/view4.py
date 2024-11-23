@@ -1,10 +1,13 @@
 import tkinter as tk
 from tkinter import Label, Button, PhotoImage
+from empleado_manager import EmpleadoManager
 
 class View4(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
         self.controller = controller
+        
+        self.empleado_manager = EmpleadoManager()
 
         self.back_img = PhotoImage(file="assets\\back.png").subsample(10)
        
@@ -73,3 +76,6 @@ class View4(tk.Frame):
         Label(self, text="15", font=("Helvetica", 20, "bold"), fg="black", bd=1, relief="solid").grid(row=5, column=3)
         
         Button(self, image=self.back_img,bd=0, command=lambda: controller.show_frame("View1")).place(x=10, y=10)
+        
+        
+      

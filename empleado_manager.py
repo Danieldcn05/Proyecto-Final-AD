@@ -74,7 +74,7 @@ class EmpleadoManager:
                     return False
 
         def separar_numeros_letra(self, cadena):
-            match = re.match(r"(\d+)([A-Z])", cadena, re.I)  # I es para que no sea case sensitive, r es para que sea raw string
+            match = re.match(r"(\d+)([A-Z])", cadena, re.I) 
             if match:
                 numeros = match.group(1)
                 letra = match.group(2)
@@ -153,4 +153,4 @@ class EmpleadoManager:
                 msg_val.config(text="EMPLEADO NO EXISTE", fg="red")
                 return False
             
-            
+           

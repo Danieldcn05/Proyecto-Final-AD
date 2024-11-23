@@ -98,3 +98,13 @@ class DatabaseManager:
             return False  # El usuario no existe
         return result[0] is not None  # True si tiene fecha de baja, False si es NULL
     
+    def get_empleado(self, user_id):
+        conn = sqlite3.connect(self.db_name)
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT * FROM empleados WHERE id = ?", (user_id,))
+        result = cursor.fetchone()
+        
+        conn.close()
+        
+        return result
