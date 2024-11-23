@@ -210,10 +210,10 @@ class View5(tk.Frame):
             salario_bruto = salario_mensual * numero_pagas
             prorrata_pagas = salario_bruto / 12
             
-            deduccion_ss = (salario_bruto * por_ss) / 100
-            retencion_irpf = (salario_bruto * por_irpf) / 100
+            deduccion_ss = (salario_mensual * por_ss) / 100
+            retencion_irpf = (salario_mensual * por_irpf) / 100
             
-            a_percibir = salario_bruto - deduccion_ss - retencion_irpf
+            a_percibir = salario_mensual - deduccion_ss - retencion_irpf
             
             self.salario_bruto_var.set(salario_bruto)
             self.prorrata_pagas_var.set(prorrata_pagas)
@@ -240,6 +240,7 @@ class View5(tk.Frame):
             self.datos_bancarios_var.get(),
             self.num_afiliacion_ss_var.get(),
             self.salario_bruto_var.get(),
+            self.salario_mes_var.get(),
             self.a_percibir_var.get(),
             self.numero_pagas_var.get(),
             self.irpf_var.get(),

@@ -25,11 +25,12 @@ class PDF(FPDF):
         
         self.ln(10)
 
-    def salary_details(self, salary_bruto, salario_neto,num_pagas, por_irpf, por_ss, ret_irpf, ret_ss):
+    def salary_details(self, salary_bruto,salario_bruto_mensual, salario_neto,num_pagas, por_irpf, por_ss, ret_irpf, ret_ss):
         self.set_font('Arial', 'B', 12)
         self.cell(0, 10, 'Detalles del Salario', 0, 1)
         self.set_font('Arial', '', 12)
-        self.cell(0, 10, f'Salario Bruto: {salary_bruto} EUR', 0, 1)
+        self.cell(0, 10, f'Salario Bruto Anual: {salary_bruto} EUR', 0, 1)
+        self.cell(0, 10, f'Salario Bruto Mensual: {salario_bruto_mensual} EUR', 0, 1)
         self.cell(0, 10, f'Número de Pagas: {num_pagas}', 0, 1)
         self.cell(0, 10, f'Porcentaje de IRPF: {por_irpf}%', 0, 1)
         self.cell(0, 10, f'Retención IRPF: {ret_irpf} EUR', 0, 1)
@@ -38,7 +39,7 @@ class PDF(FPDF):
         self.cell(0, 10, f'Salario Neto: {salario_neto} EUR', 0, 1)
         self.ln(10)
 
-    def generar_pdf(self,nombre, direccion, nif, ccc, num_ss, salario_bruto, salario_neto, num_pagas, por_irpf, por_ss, ret_irpf, ret_ss):
+    def generar_pdf(self,nombre, direccion, nif, ccc, num_ss, salario_bruto,salario_bruto_mensual,salario_neto, num_pagas, por_irpf, por_ss, ret_irpf, ret_ss):
         # Crear una instancia de PDF
         pdf = PDF()
 
@@ -49,7 +50,7 @@ class PDF(FPDF):
         pdf.employee_info(nombre, direccion, nif, ccc, num_ss)
 
         # Detalles del salario
-        pdf.salary_details(salario_bruto, salario_neto, num_pagas, por_irpf, por_ss, ret_irpf, ret_ss)
+        pdf.salary_details(salario_bruto,salario_bruto_mensual ,salario_neto, num_pagas, por_irpf, por_ss, ret_irpf, ret_ss)
         
         # Crear una ventana de Tkinter (no visible)
         root = tk.Tk()

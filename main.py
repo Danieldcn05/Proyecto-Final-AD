@@ -29,7 +29,7 @@ class MainApp(tk.Tk):
             self.frames[page_name] = frame
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame("View1")
+        self.show_frame("View4")
 
     def show_frame(self, page_name):
         frame = self.frames[page_name]

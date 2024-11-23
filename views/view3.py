@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import Label, Button, PhotoImage, Entry
 from empleado_manager import EmpleadoManager
+from datetime import datetime
 
 class View3(tk.Frame):
     def __init__(self, parent, controller):
@@ -11,7 +12,7 @@ class View3(tk.Frame):
 
         self.back_img = PhotoImage(file="assets\\back.png").subsample(10)
        
-
+        self.fecha_hoy = datetime.today().strftime('%Y-%m-%d')
         
         estilo_boton = {
             "width": 20,
@@ -53,8 +54,9 @@ class View3(tk.Frame):
         id_entry.grid(row=1, column=0, ipady=6, sticky="ew", padx=(150,150), pady=(0,100))
 
         Label(self, text="FECHA DE ABAJA", **estilo_label).grid(row=0, column=1, pady=(200,0))
-        fec_baja_entry = Entry(self, **estilo_entry)
+        fec_baja_entry = Entry(self, **estilo_entry, )
         fec_baja_entry.grid(row=1, column=1, ipady=6, sticky="ew", padx=(150,150), pady=(0,100))
+        fec_baja_entry.insert(0, self.fecha_hoy)
 
         
 
@@ -76,6 +78,6 @@ class View3(tk.Frame):
 
             if(self.empleado_manager.asignar_fec_baja(id_entry.get(),fec_baja_entry.get(),msg_val)):
                 id_entry.delete(0, 'end')
-                fec_baja_entry.delete(0, 'end')
+                
         
         Button(self, text="CONFIRMAR", **estilo_boton, command=dar_baja).grid(row=4, column=0, columnspan=2, pady=(0,100))
